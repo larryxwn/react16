@@ -1,1 +1,36 @@
+//useEffect can provide the side effect after function component render.
+//every side effect function should use one useEffect, and we can call useEffect many times for many side effect
+//useEffect is a function and need a callback functiion for its paratemer
+//after component mount and every render, the callback will be called, and useEffect also can return a function, this function will be called when component unmount.
+//the above can implement the behanvior like as  
+
+const subscrib = function(listener) {
+  //do subscrib
+  return function() {
+    //do unsubscrib
+  }
+}
+
+const unSubscrib = sbscrib(()=> {});
+unSubscrib();
+
+//eg for useEffect
+//the second parameter can reducer the execu time
+//if it is [], then the callback will be only execut after mount
+frunction useEffectComponent(props) {
+  let {name, setName} = useState('Larry');
+  useEffect(()=> {
+   document.title = name + '\'s page' ; 
+  });
+  useEffect(()=> {
+    const clickFn = ()=> {};
+    document.addEventListener('onClick', clickFn, false);
+    return ()=> {
+      document.removeEventListener('onClick', clickFn);
+    }
+  }, []);
+}
+
+
+
 
