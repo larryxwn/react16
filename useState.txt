@@ -1,5 +1,5 @@
 
-//useState is a function which return pair of values, and it support a parameter as the initial value of state.
+//useState is a function which return an array, pair of values, and it support a parameter as the initial value of state.
 //we can use useState many times for several state.
 
 
